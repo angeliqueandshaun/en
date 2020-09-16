@@ -85,12 +85,11 @@
      <div class="mytimer">
        <p id="timer"></p>
      </div>
-   </section> 
-  </body>
-  <script>
+   </section>
+   
+   <script>
     var endDate = new Date("April 5, 2021 16:00:00").getTime(); //set end date/time
     //set the timer to update every second
-    var x = setInterval(function() {
       
       //get the time/date now
       var now = new Date().getTime();
@@ -105,6 +104,6 @@
       
       //output
       document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m ";
-    },1000);
-  </script>
+    </script>
+  </body>  
 </html>
