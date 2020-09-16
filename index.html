@@ -78,6 +78,31 @@
    <section>
     <div class="headerLogo">
       <img src="logo-lg.png" width=50% height="250">
-    </dvi>
+    </div>
+     
+   <section>
+     <div id="timer" class="mytimer">
+     </div>
+   </section> 
   </body>
+  <script>
+    var endDate = new Date("April 5, 2021 16:00:00").getTime(); //set end date/time
+    //set the timer to update every second
+    var x = setInterval(function() {
+      
+      //get the time/date now
+      var now = new Date().getTime();
+      
+      //get the difference between dates
+      var distance = endDate - now;
+      
+      //get the days/hours/minutes
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      
+      //output
+      document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m ";
+    },1000);
+  </script>
 </html>
