@@ -13,8 +13,13 @@
 			}
 			
 			@font-face {
-				font-family: Demo_ConeriaScript;
-				src: url("Coneria_Scrip/Demo_ConeriaScript.ttf");
+				font-family: myConeriaScript;
+				src: url("Coneria-Script/Demo-ConeriaScript.ttf");
+			}
+			
+			@font-face {
+				font-family: myRaleway;
+				src: url("Raleway/Raleway-Regular.ttf");
 			}
 			
 			body{
@@ -65,37 +70,48 @@
 			}
 			
 			#BigDay {
-				font-family: Demo_ConeriaScript;
+				font-family: myConeriaScript;
 				font-size: 45px;
+				color: white;
+				text-shadow: 1px 1px 1px black;
 			}
 			
 			#GettingThere {
-				font-family: Demo_ConeriaScript;
+				font-family: myConeriaScript;
 				font-size: 45px;
+				color: white;
+				text-shadow: 1px 1px 1px black;
 			}
 			
 			#Gifts {
-				font-family: Demo_ConeriaScript;
+				font-family: myConeriaScript;
 				font-size: 45px;
+				color: white;
+				text-shadow: 1px 1px 1px black;
 			}
 			
 			#RSVP {
-				font-family: Demo_ConeriaScript;
+				font-family: myConeriaScript;
 				font-size: 45px;
+				color: white;
+				text-shadow: 1px 1px 1px black;
 			}
 			
 			.main {
-				width: 1000px;
+				width: 1100px;
 				display: inline-block;
-				font-size: 20px;
-				
+				font-size: 18px;
+				font-family: myRaleway;
+				color: #71726e;
+				text-shadow: none;
 			}
 			
 			.columns {
 				display: inline-block;
 				width: 500px;
-				float: left;
+				vertical-align: top;			
 			}
+			
 			
 			.RSVPButton {
 				font-family: myfutura;
@@ -148,11 +164,11 @@
 				<div id="BigDay">
 					<p><h1>The Big Day</h1></p>
 					<div class="main">
-						<div class="columns">
+						<div class="columns Left">
 							<p><b>When</b></p>
 							<p>27 Apr 2021, 16:00</p>
 						</div>
-						<div class="columns">
+						<div class="columns Right">
 							<p><b>Where</b></p>
 							<p>Kuthaba Bush Lodge,</br>Driefontein Rd,</br> 0510,</br> South Africa</p>
 						</div>
@@ -166,7 +182,7 @@
 				<div id="GettingThere">
 					<p><h1>Getting There</h1></p>
 					<div class="main">
-						<div class="columns">
+						<div class="columns Left">
 							<p><b>Transportation</b></p>
 							<p>
 								<ul style="text-align: left; list-style-type:disc;">
@@ -180,7 +196,7 @@
 								</ul>
 							</p>
 						</div>
-						<div class="columns">
+						<div class="columns Right">
 							<p><b>Accomodation</b></p>
 							<p style="text-align:left;">There are a wide range of accommodation options available at Kuthaba Bush Lodge with a style and price to suit each guest's needs. This totals 80 beds, excluding campsites. Book accommodation here</p>
 						</div>						
