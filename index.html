@@ -30,7 +30,7 @@
 			
 			.contentContainer {
 				width: 100%;
-				/*border: 1px solid black; /* border width|style|color */
+				border: 1px solid black; /* border width|style|color */
 				text-align: center;
 				
 			}
@@ -68,12 +68,28 @@
 			}
 			
 			#Logo {
-				
+				position: absolute;
+				left: 48%;
+				top: 168px;
+				z-index: -2;
 			}
 			
 			.timer {
 				font-family: myfutura;
 				font-size: 30px;
+			}
+			
+			.nameContainer {
+				display: inline-block;
+				margin-left: 30%;
+				text-align: center;
+			}
+			
+			#Intro {			
+				font-family: myConeriaScript;
+				font-size: 75px;
+				color: white;
+				text-shadow: 1px 1px 1px black				
 			}
 			
 			#Top {
@@ -136,6 +152,12 @@
 				vertical-align: top;			
 			}
 			
+			.columnsName {				
+				display: inline-block;
+				width: 350px;
+				vertical-align: top;			
+			}
+			
 			
 			.RSVPButton {
 				font-family: myfutura;
@@ -153,25 +175,33 @@
 		</style>
 	</head>
 	<body>
-		<section> <!-- Block for navigation Links -->
-			<div class="contentContainer">
-				<div class="navBar">
-					<ul class="menu">
-						<li class="menuItem"><a href="#Home">Home</a></li>
-						<li class="menuItem"><a href="#BigDay">The Big Day</a></li>
-						<li class="menuItem"><a href="#GettingThere">Getting There</a></li>
-						<li class="menuItem"><a href="#Map">Map</a></li>						
-						<li class="menuItem"><a href="#Gifts">Gifts</a></li>
-						<li class="menuItem"><a href="#RSVP">RSVP</a></li>
-						<li class="menuItem"><a href="#Us">Us Being Us</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+		<section> <!-- Block for navigation Links -->			
+				<div class="contentContainer"
+					<div class="navBar">
+						<ul class="menu">
+							<li class="menuItem"><a href="#Home">Home</a></li>
+							<li class="menuItem"><a href="#BigDay">The Big Day</a></li>
+							<li class="menuItem"><a href="#GettingThere">Getting There</a></li>
+							<li class="menuItem"><a href="#Map">Map</a></li>						
+							<li class="menuItem"><a href="#Gifts">Gifts</a></li>
+							<li class="menuItem"><a href="#RSVP">RSVP</a></li>
+							<li class="menuItem"><a href="#Us">Us Being Us</a></li>
+						</ul>
+					</div>
+				</div>			
+		</section>	
 		
 		<section> <!-- Block for "A heart S" image -->
-			<div class="contentContainer">
-				<img id="Logo" src="Images/logo.png">
+			<img id="Logo" src="Images/logo.png">
+			<div class="nameContainer">
+				<div id="Intro">					
+					<div class="columnsName">
+						<p>Angelique</p>
+					</div>
+					<div class="columnsName">
+						<p>Shaun</p>
+					</div>
+				</div>
 			</div>
 		</section>
 		
@@ -198,7 +228,7 @@
 							<p><b>When</b></p>
 							<p>27 Apr 2021, 16:00</p>
 						</div>
-						<div class="columns Right">
+						<div class="columns Right" style="text-align: left;">
 							<p><b>Where</b></p>
 							<p>Kuthaba Bush Lodge,</br>Driefontein Rd,</br> 0510,</br> South Africa</p>
 						</div>
