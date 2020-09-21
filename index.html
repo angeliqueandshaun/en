@@ -1,12 +1,17 @@
 <!doctype html>
 <html>
 	<head>
+		<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+		
 		<style>
 		
 			html {
 				scroll-behavior: smooth;
-				background: url("Images/background2.jpg") no-repeat center fixed;
-				background-size: cover;
+				background: url("Images/background2.jpg") no-repeat;
+				background-position: 0px 0px;
+				background-size: 100% 100%;
+				background-attachment: fixed;
+				background-color: white;				
 			}
 			
 			@font-face {
@@ -26,11 +31,8 @@
 			
 			body{
 				
-			}
-			
-			#BG {
 				
-			}
+			}			
 			
 			.contentContainer {
 				width: 100%;
@@ -39,11 +41,22 @@
 				
 			}
 			
+			.stickyContainer {
+				width: 100%;
+				/*border: 1px solid black; /* border width|style|color */
+				text-align: center;
+				position: fixed;
+				top: 0;
+				width: 100%;
+				background: white;
+			}
+			
 			.imageContainer {
 				width: 100%;
 				/*border: 1px solid black; /* border width|style|color */
 				text-align: center;
 			}
+			
 			
 			.navBar{												
 				height: 150px;
@@ -89,8 +102,8 @@
 			#Intro {			
 				font-family: myConeriaScript;
 				font-size: 75px;
-				color: white;
-				text-shadow: 1px 1px 1px black				
+				color: #71726e;
+				text-shadow: 1px 1px 1px black;				
 			}
 			
 			#Top {
@@ -125,6 +138,13 @@
 			}
 			
 			#Gifts {
+				font-family: myConeriaScript;
+				font-size: 45px;
+				color: white;
+				text-shadow: 1px 1px 1px black;
+			}
+			
+			#Map {
 				font-family: myConeriaScript;
 				font-size: 45px;
 				color: white;
@@ -176,8 +196,8 @@
 		</style>
 	</head>
 	<body>
-		<section> <!-- Block for navigation Links -->			
-				<div class="contentContainer"
+		<section> <!-- Block for navigation Links -->				
+				<div class="contentContainer">
 					<div class="navBar">
 						<ul class="menu">
 							<li class="menuItem"><a href="#Home">Home</a></li>
@@ -190,7 +210,7 @@
 						</ul>
 					</div>
 				</div>			
-		</section>	
+		</section>
 		
 		<section> <!-- Vector Art Protea -->
 			<div class="imageContainer">
@@ -199,10 +219,10 @@
 		</section>
 		
 		<section> <!-- Block for "A heart S" image -->
-			<div class="contentContainer">
-				<img id="Logo" src="Images/Logo.png" height="200px" width="800px">
+			<div class="contentContainer" >
+				<img id="Logo" src="Images/Logo.png" height="200px" width="1000px">
 			</div>
-		</section>
+		</section>		
 		
 		<section><!-- Block for countdown timer -->
 			<div class="contentContainer">
@@ -211,7 +231,13 @@
 				</div>
 			</div>
 		</section>
-		
+		<!--
+		<section>	
+			<<div class="heroContainer">
+				<img class="BG" src="Images/background3.jpg">
+			</div>
+		</section>
+		-->
 		<section> <!-- Vector Art Protea -->
 			<div class="imageContainer">
 				<img src="Images/fern.png" alt="Protea" height="100px" width="300px">
@@ -222,13 +248,13 @@
 			<div class="contentContainer">
 				<div id="BigDay">
 					<p><h1>The Big Day</h1></p>
-					<div class="main">
-						<div class="columns Left">
-							<p><b>When</b></p>
+					<div class="main" style="width: 780px">
+						<div class="columns Left" style="width: 350px">
+							<p style="font-family: sacramento; font-size:40px;"><b>When</b></p>
 							<p>27 Apr 2021, 16:00</p>
 						</div>
-						<div class="columns Right">
-							<p><b>Where</b></p>
+						<div class="columns Right" style="width: 350px">
+							<p style="font-family: sacramento; font-size:40px;"><b>Where</b></p>
 							<p>Kuthaba Bush Lodge,</br>Driefontein Rd,</br> 0510,</br> South Africa</p>
 						</div>
 					</div>
@@ -254,7 +280,7 @@
 					<p><h1>Getting There</h1></p>
 					<div class="main">
 						<div class="columns Left">
-							<p><b>Transportation</b></p>
+							<p style="font-family: sacramento; font-size:40px;"><b>Transportation</b></p>
 							<p>
 								<ul style="text-align: left; list-style-type:disc;">
 									<li class="directions">Head North on the N1 towards Polokwane</li>
@@ -268,7 +294,7 @@
 							</p>
 						</div>
 						<div class="columns Right">
-							<p><b>Accomodation</b></p>
+							<p style="font-family: sacramento; font-size:40px;"><b>Accomodation</b></p>
 							<p style="text-align:left;">There are a wide range of accommodation options available at Kuthaba Bush Lodge with a style and price to suit each guest's needs. This totals 80 beds, excluding campsites. Book accommodation here</p>
 						</div>						
 					</div>
@@ -284,8 +310,8 @@
 		
 		<section> <!-- Block for Map to lodge -->
 			<div id="Map" class="contentContainer">
-				<p><h1>Gifts</h1></p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.0389238533603!2d28.421529315612574!3d-24.62234330751138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebf42426d4562d5%3A0x5716acd8dc7e385f!2sKuthaba%20Bush%20Lodge!5e0!3m2!1sen!2sza!4v1600331412299!5m2!1sen!2sza" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				<p><h1>Map</h1></p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.0389238533603!2d28.421529315612574!3d-24.62234330751138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebf42426d4562d5%3A0x5716acd8dc7e385f!2sKuthaba%20Bush%20Lodge!5e0!3m2!1sen!2sza!4v1600331412299!5m2!1sen!2sza" width="1000" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 			</div>
 		</section>
 		
