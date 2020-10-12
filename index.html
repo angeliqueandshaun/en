@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Angelique+Shaun are getting married</title>
+		<link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+		
 		<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
 		
 		<style>
@@ -252,14 +254,66 @@
 				z-index: -2;
 				position: relative;
 				opacity: 0.9;
+			}						
+			
+			.RSVPModal{
+			  display: none; /* Hidden by default */
+			  position: fixed; /* Stay in place */
+			  z-index: 1; /* Sit on top */
+			  left: 0;
+			  top: 0;
+			  padding-top: 10px;
+			  width: 100%; /* Full width */
+			  height: 100%; /* Full height */
+			  overflow: auto; /* Enable scroll if needed */
+			  background-color: rgb(0,0,0); /* Fallback color */
+			  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 			}
-						
-					
+
+			/* Modal Content/Box */
+			.modal-content{
+			  background-color: #fefefe;
+			  margin: 2% auto; /* 15% from the top and centered */
+			  padding: 20px;
+			  border: 1px solid #888;
+			  width: 30%; /* Could be more or less, depending on screen size */
+			}
+			
+			.RSVPContainer{
+			}
+
+			/* The Close Button */
+			.close{
+			  color: #aaa;
+			  float: right;
+			  font-size: 55px;
+			  font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+			  color: black;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+			
+			#page1 {
+				display: block;
+			}
+			
+			#page2 {
+				display: none;
+			}
+			
+			#page3 {
+				display: none;
+			}
+			
 			
 		</style>
 	</head>
 	<body>
-
+	
 		<section> <!-- Block for navigation Links -->				
 				<div class="navContainer">
 					<div class="navBar">
@@ -380,7 +434,7 @@
 			</div>
 		</section>
 		
-<section> <!-- Block for the Staying there -->
+		<section> <!-- Block for the Staying there -->
 			<div class="contentContainer">
 				<div id="StayingThere">
 					<div>Staying there</div>
@@ -402,8 +456,8 @@
 			<div class="contentContainer">
 				<div id="RSVP">
 					<div>Répondez s'il vous plaît</div>
-					<div class="main">
-						<p><button class="RSVPButton">RSVP</button></p>
+					<div class="main">					
+						<p><button class="RSVPButton" onclick='showModal()'>RSVP</button></p>
 					</div>
 				</div>
 			</div>
@@ -435,6 +489,158 @@
 			</div>
 		</section>
 		
+		<section> <!-- RSVP Popup box -->
+			<div id="RSVP-Modal" class="RSVPModal">
+				<div class="modal-content">
+					<div class='RSVPContainer'>
+						<span onclick="hideModal()" class="close">&times;</span>
+						<div id='page1'>
+							<form action='#' onsubmit='callServer();return false'>
+								<p>Please enter your email address:</br>
+								<input id='email' pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input></p>
+								<input type='submit' ></input>
+								<p id='response'></p>
+							</form>
+						</div>
+						<div id='page2'>
+							<form action='#' onsubmit='Submit();return false'>
+								<p>Please confirm who will be attending? (leave blank if no one will be attending)</p>			
+									<div id='list'><ul id='checkboxlist' style="list-style-type:none;"></ul></div>
+									<div><p>Please advise of any allergies or dietary requirements?</p><input id='alergy' required></input></div>
+									<div><p>Please suggest a song for the reception?</p><input id='song' required></input></div></br>
+									<input type='submit'></input>
+								<p id='result'></p>
+							</form>
+						</div>
+						<div id='page3'>
+							<p>Thank you for your RSVP submission</p>			
+						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
 		
+		<script>
+			var res = new Array;
+			
+			function Update(){
+				document.getElementById('RSVP').style.display = "none";
+			}
+			
+			function showModal(){
+				document.getElementById('RSVP-Modal').style.display = "block";
+			}
+					
+			function hideModal(){
+				document.getElementById('RSVP-Modal').style.display = "none";
+			}						
+		
+			function callServer(){
+					var str = 'email=' + document.getElementById('email').value;
+					var EmailAddress = str.toLowerCase();
+					const HTTP = new XMLHttpRequest();
+					const Url = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress;
+					var myCheckBoxList = '<ul>';				
+									
+					document.getElementById('response').innerHTML = 'Please wait while we retrieve your information';
+					
+					HTTP.responseType = 'text';
+					HTTP.open('GET', Url, true);
+					
+					HTTP.onreadystatechange = function() {
+						document.getElementById('response').innerHTML += '...';
+						if(HTTP.readyState === 4 && HTTP.status === 200) {						
+							var JS_obj = JSON.parse(HTTP.response);
+	//						document.getElementById('response').innerHTML = HTTP.response;						
+							var myLength = JS_obj.length;
+							for(i = 0; i < myLength; i++) {							
+								res.push(JS_obj[i]);
+								var textnode = document.createTextNode(' ' + JS_obj[i]);
+								var node = document.createElement('li');
+								var checkbox = document.createElement('input');
+								checkbox.type = 'checkbox';
+								checkbox.id = 'list'+[i];
+								checkbox.name = 'names';
+								checkbox.value = 'name';
+								
+								node.appendChild(checkbox);
+								node.appendChild(textnode);
+								document.getElementById('checkboxlist').appendChild(node);
+							}
+							
+							document.getElementById('page1').style.display = 'none';
+							document.getElementById('page2').style.display = 'block';
+							document.getElementById('page3').style.display = 'none';
+							//res.forEach(addValues);					
+							myCheckBoxList += '</ul>';
+						}
+					}
+												
+					HTTP.send(Url);
+			}
+			
+			function Submit(){
+				const HTTP = new XMLHttpRequest();				
+				var responsedata = '';
+				var str = 'email=' + document.getElementById('email').value;
+				var EmailAddress = str.toLowerCase();
+				var text = '';
+				var URL2 = '';
+				var Allergies = '';
+				var Song = '';
+				
+				
+				if(document.getElementById('alergy').value != ''){
+					Allergies = '&allergy=' + document.getElementById('alergy').value;
+				}else{
+					Allergies = '&allergy=none';
+				}
+				
+				if(document.getElementById('song').value != ''){
+					Song = '&song=' + document.getElementById('song').value;
+				}else{
+					song = '&song=none';
+				}
+				
+				
+				//document.getElementById('result').innerHTML = EmailAddress + Allergies + Song;
+				var listlength = res.length;
+				
+				for(j = 0; j < listlength; j++){				
+					var myBox = document.getElementById('list'+[j]);
+					if (myBox.checked == true){
+						responsedata = '&fname=' + res[j] + '&attend=yes';											
+						text = text + responsedata;											
+					}else{						
+						responsedata = '&fname=' + res[j] + '&attend=no';
+						text = text + responsedata;												
+					}
+				}
+				
+				URL2 = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress + text + Allergies + Song;
+				document.getElementById('result').innerHTML = 'Please wait while we submit your details...';
+				
+				HTTP.responseType = 'text';
+				HTTP.open('GET', URL2, true);
+				
+				HTTP.onreadystatechange = function() {
+					document.getElementById('response').innerHTML += '...';
+					if(HTTP.readyState === 4 && HTTP.status === 200) {						
+						//var JS_obj = JSON.parse(HTTP.response);
+						var returnText = HTTP.response;
+						if(returnText === 'executed'){
+							document.getElementById('page1').style.display = 'none';
+							document.getElementById('page2').style.display = 'none';
+							document.getElementById('page3').style.display = 'block';
+						}else{
+							document.getElementById('result').innerHTML = 'Error with your submission. Please refresh the page and try again';
+						}
+												
+					}
+				}											
+				HTTP.send(URL2);
+			}
+				
+		</script>
 	</body>  
 </html>
