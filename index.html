@@ -208,6 +208,12 @@
 				margin-top: -20px;
 			}
 			
+			#GettingThereContent{
+				margin-left: 25%;
+				text-align: left;
+				width: 50%;
+			}
+			
 			.main {
 				width: 1100px;
 				display: inline-block;
@@ -280,6 +286,7 @@
 			}
 			
 			.RSVPContainer{
+				
 			}
 
 			/* The Close Button */
@@ -354,17 +361,6 @@
 			</div>
 		</section>	
 	
-	
-	
-	
-	
-		<!--
-		<section>	
-			<<div class="heroContainer">
-				<img class="BG" src="Images/background3.jpg">
-			</div>
-		</section>
-		-->
 		<section> <!-- Vector Art Protea -->
 			<div id="BigDayFERN" class="imageContainer">
 				<img src="Images/fern.png" alt="Protea" height="50px" width="150px">
@@ -406,17 +402,19 @@
 				<div id="GettingThere">
 					<div>Getting there</div>
 					<div class="main">
-							<p>
-								<ul style="font-family: myRaleway; font-size:17px; list-style-type:disc;color: #70716c">
-									<li class="directions">Head North on the N1 towards Polokwane</li>
-									<li class="directions">Keep left at the Kranskop Toll Plaza to take the R33 left towards Modimolle</li>
-									<li class="directions">Continue on the R33 (Nelson Mandela Drive) into Modimolle</li>
-									<li class="directions">Turn Right onto the R101 (Thabo Mbeki Drive)</li>
-									<li class="directions">Continue straight for 6,5km on the R101</li>
-									<li class="directions">Turn Left onto the Driefontein Road (D1359)</li>
-									<li class="directions">Continue on this road for 6km and Kuthaba Bush Lodge will be on your right</li>
-								</ul>
-							</p>			
+						<div id="GettingThereContent">
+								<p>
+									<ul style="font-family: myRaleway; font-size:17px; list-style-type:disc;color: #70716c">
+										<li class="directions">Head North on the N1 towards Polokwane</li>
+										<li class="directions">Keep left at the Kranskop Toll Plaza to take the R33 left towards Modimolle</li>
+										<li class="directions">Continue on the R33 (Nelson Mandela Drive) into Modimolle</li>
+										<li class="directions">Turn Right onto the R101 (Thabo Mbeki Drive)</li>
+										<li class="directions">Continue straight for 6,5km on the R101</li>
+										<li class="directions">Turn Left onto the Driefontein Road (D1359)</li>
+										<li class="directions">Continue on this road for 6km and Kuthaba Bush Lodge will be on your right</li>
+									</ul>
+								</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -549,30 +547,33 @@
 					
 					HTTP.onreadystatechange = function() {
 						document.getElementById('response').innerHTML += '...';
-						if(HTTP.readyState === 4 && HTTP.status === 200) {						
+						if(HTTP.readyState === 4 && HTTP.status === 200) {																				
 							var JS_obj = JSON.parse(HTTP.response);
-	//						document.getElementById('response').innerHTML = HTTP.response;						
 							var myLength = JS_obj.length;
-							for(i = 0; i < myLength; i++) {							
-								res.push(JS_obj[i]);
-								var textnode = document.createTextNode(' ' + JS_obj[i]);
-								var node = document.createElement('li');
-								var checkbox = document.createElement('input');
-								checkbox.type = 'checkbox';
-								checkbox.id = 'list'+[i];
-								checkbox.name = 'names';
-								checkbox.value = 'name';
+							if(myLength === 0){
+								document.getElementById('response').innerHTML = 'Email address not found </br> Please use email address sent upon confirmation of Save the date.';
+							}else{								
+								for(i = 0; i < myLength; i++) {							
+									res.push(JS_obj[i]);
+									var textnode = document.createTextNode(' ' + JS_obj[i]);
+									var node = document.createElement('li');
+									var checkbox = document.createElement('input');
+									checkbox.type = 'checkbox';
+									checkbox.id = 'list'+[i];
+									checkbox.name = 'names';
+									checkbox.value = 'name';
+									
+									node.appendChild(checkbox);
+									node.appendChild(textnode);
+									document.getElementById('checkboxlist').appendChild(node);
+								}
 								
-								node.appendChild(checkbox);
-								node.appendChild(textnode);
-								document.getElementById('checkboxlist').appendChild(node);
+								document.getElementById('page1').style.display = 'none';
+								document.getElementById('page2').style.display = 'block';
+								document.getElementById('page3').style.display = 'none';
+								//res.forEach(addValues);					
+								myCheckBoxList += '</ul>';
 							}
-							
-							document.getElementById('page1').style.display = 'none';
-							document.getElementById('page2').style.display = 'block';
-							document.getElementById('page3').style.display = 'none';
-							//res.forEach(addValues);					
-							myCheckBoxList += '</ul>';
 						}
 					}
 												
