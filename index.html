@@ -197,7 +197,7 @@
 				/*text-shadow: 1px 1px 1px black;*/k;
 			}
 			
-			#RSVP {
+			.RSVP {
 				font-family: myAmelia;
 				font-size: 62px;
 				color: #b3844b;
@@ -456,7 +456,7 @@
 		
 		<section> <!-- Block for RSVP -->
 			<div class="contentContainer">
-				<div id="RSVP">
+				<div class="RSVP">
 					<div>Répondez s'il vous plaît</div>
 					<div class="main">					
 						<p><button class="RSVPButton" onclick='showModal()'>RSVP</button></p>
@@ -496,6 +496,9 @@
 				<div class="modal-content">
 					<div class='RSVPContainer'>
 						<span onclick="hideModal()" class="close">&times;</span>
+						<div class="RSVP">
+							<div>Répondez s'il vous plaît</div>
+						</div>
 						<div id='page1'>
 							<form action='#' onsubmit='callServer();return false'>
 								<p>Please enter your email address:</br>
