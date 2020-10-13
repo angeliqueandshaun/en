@@ -204,6 +204,13 @@
 				/*text-shadow: 1px 1px 1px black;*/
 			}
 			
+			.RES {
+				font-family: myAmelia;
+				font-size: 62px;
+				color: #b3844b;
+				/*text-shadow: 1px 1px 1px black;*/
+			}
+			
 			#AccImage {
 				margin-top: -40px;
 			}
@@ -274,7 +281,7 @@
 				opacity: 0.9;
 			}						
 			
-			.RSVPModal{
+			.Modal{
 			  display: none; /* Hidden by default */
 			  position: fixed; /* Stay in place */
 			  z-index: 1; /* Sit on top */
@@ -298,6 +305,14 @@
 			}
 			
 			.RSVPContainer{
+				
+			font-size: 14px;
+			font-family: myRaleway;
+			color: #70716c;
+		
+			}
+			
+			.RESContainer{
 				
 			font-size: 14px;
 			font-family: myRaleway;
@@ -329,6 +344,18 @@
 			}
 			
 			#page3 {
+				display: none;
+			}
+			
+			#RES-page1 {
+				display: block;
+			}
+			
+			#RES-page2 {
+				display: none;
+			}
+			
+			#RES-page3 {
 				display: none;
 			}
 			
@@ -454,7 +481,7 @@
 					<div>Staying there</div>
 					<div class="main">
 						<div style="font-family: myRaleway; font-size:17px; color: #70716c">There are a wide range of accommodation options available at Kuthaba Bush Lodge. View rates <a href="https://kuthaba.co.za/wp-content/uploads/2020/06/ACCOMMODATION-RATES-2021.pdf" target="_blank">here.</a></div> 
-						<p><button class="Book" onclick='showModal()'>Reservations</button></p>
+						<p><button class="Book" onclick="showModal('RES-Modal')">Reservations</button></p>
 									
 						<a id="AccImage" href="https://kuthaba.co.za/accommodation/#accommodation2" target="_blank"><img id="Logo" src="Images/Accomodation.PNG" height="350px" width="100%"></a>
 					</div>
@@ -473,7 +500,7 @@
 				<div class="RSVP">
 					<div>Répondez s'il vous plaît</div>
 					<div class="main">					
-						<p><button class="RSVPButton" onclick='showModal()'>RSVP</button></p>
+						<p><button class="RSVPButton" onclick="showModal('RSVP-Modal')">RSVP</button></p>
 					</div>
 				</div>
 			</div>
@@ -506,18 +533,18 @@
 		</section>
 		
 		<section> <!-- RSVP Popup box -->
-			<div id="RSVP-Modal" class="RSVPModal">
+			<div id="RSVP-Modal" class="Modal">
 				<div class="modal-content">
 					<div class='RSVPContainer'>
-						<span onclick="hideModal()" class="close">&times;</span>
+						<span onclick="hideModal('RSVP-Modal')" class="close">&times;</span>
 						<div class="RSVP">
 							<div style="font-size:50px;">Répondez s'il vous plaît</div>
 						</div>
 						<div id='page1'>
 							<form action='#' onsubmit='callServer();return false'>
 								<p>Please enter your email address:</br>
-								<input id='email' pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input></p>
-								<input type='submit' ></input>
+								<input id='email' pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" required></input></p>
+								<input type='submit' value='Confirm'></input>
 								<p id='response'></p>
 							</form>
 						</div>
@@ -539,19 +566,54 @@
 			</div>			
 		</section>
 		
+		<section> <!-- Bookings Popup box -->
+			<div id="RES-Modal" class="Modal">
+				<div class="modal-content">
+					<div class='RESContainer'>
+						<span onclick="hideModal('RES-Modal')" class="close">&times;</span>
+						<div class="RES">
+							<div style="font-size:50px;">Reservations</div>
+						</div>
+						<div id='RES-page1'>
+							<form action='#' onsubmit='Confirm();return false'>
+								<p>
+								Please read the below and then click continue:</br></br>
+
+								The accommodation is limited and we would love to have everyone staying over for the night, so we ask that you please try and fill the rooms with family or friends to allow everyone to have the opportunity to stay over and enjoy the celebration.</br></br>
+
+								Once you have booked your room, the list will be sent through to the lodge, and you will be invoiced directly by Kuthaba Bush Lodge.</p>
+								<!-- <input id='email' pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required></input></p> -->
+								<button type='submit'>Confirm</button>
+								<p id='response'></p>
+							</form>
+						</div>
+						<div id='RES-page2'>
+							<form action='#' onsubmit='SubmitAcc();return false'>
+								<p>Please confirm who will be attending? (leave blank if no one will be attending)</p>			
+									<div id='list'><ul id='checkboxlist' style="list-style-type:none;"></ul></div>
+									<div><p>Please advise of any allergies or dietary requirements?</p><input id='alergy' required></input></div>
+									<div><p>Please suggest a song for the reception?</p><input id='song' required></input></div></br>
+									<input type='submit'></input>
+								<p id='result'></p>
+							</form>
+						</div>
+						<div id='RES-page3'>
+							<p>Thank you your booking. </br> Kuthaba Bush Lodge will be in touch with you with your invoice.</br></br>Please note that the booking will only be finalised once payment has been received by Kuthaba Bush Lodge</p>			
+						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
+		
 		<script>
-			var res = new Array;
+			var res = new Array;			
 			
-			function Update(){
-				document.getElementById('RSVP').style.display = "none";
-			}
-			
-			function showModal(){
-				document.getElementById('RSVP-Modal').style.display = "block";
+			function showModal(id){
+				document.getElementById(id).style.display = "block";
 			}
 					
-			function hideModal(){
-				document.getElementById('RSVP-Modal').style.display = "none";
+			function hideModal(id){
+				document.getElementById(id).style.display = "none";
 			}						
 		
 			function callServer(){
@@ -662,7 +724,17 @@
 				}											
 				HTTP.send(URL2);
 			}
-				
+			
+			function Confirm(){
+				document.getElementById('RES-page1').style.display = 'none';
+				document.getElementById('RES-page2').style.display = 'block';
+			}
+			
+			function SubmitAcc(){
+				document.getElementById('RES-page2').style.display = 'none';
+				document.getElementById('RES-page3').style.display = 'block';
+			}
+			
 		</script>
 	</body>  
 </html>
