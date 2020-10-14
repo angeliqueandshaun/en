@@ -212,7 +212,7 @@
 			}
 			
 			#AccImage {
-				margin-top: -40px;
+				margin-top: -70px;
 			}
 			
 			#GettingThereContent{
@@ -398,9 +398,9 @@
 						<ul class="menu">
 							<li class="menuItem"><a href="#HomeFERN">HOME</a></li>
 							<li class="menuItem"><a href="#BigDayFERN">THE BIG DAY</a></li>
+							<li class="menuItem"><a href="#RSVPFERN">RSVP</a></li>	
 							<li class="menuItem"><a href="#GettingThereFERN">GETTING THERE</a></li>
-							<li class="menuItem"><a href="#StayingThereFERN">STAYING THERE</a></li>
-							<li class="menuItem"><a href="#RSVPFERN">RSVP</a></li>					
+							<li class="menuItem"><a href="#StayingThereFERN">STAYING THERE</a></li>										
 							<li class="menuItem"><a href="#GiftsFERN">GIFTS</a></li>							
 							<!-- <li class="menuItem"><a href="#Us">US BEING US</a></li> -->
 						</ul>
@@ -456,6 +456,23 @@
 			</div>
 		</section>		
 		
+		<section> <!-- Vector Art Protea -->
+			<div class="imageContainer" id="RSVPFERN">
+				<img src="Images/fern.png" alt="Protea" height="50" width="150">
+			</div>
+		</section>	
+		
+		<section> <!-- Block for RSVP -->
+			<div class="contentContainer">
+				<div class="RSVP">
+					<div>Répondez s'il vous plaît</div>
+					<div class="main">					
+						<p><button class="RSVPButton" onclick="showModal('RSVP-Modal')">RSVP</button></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
 		<section> <!-- Back to top button -->
 			<div>
 				<button onclick="ScrollToTop()" id="Top" title="GoToTop">^</br>TOP</button>
@@ -509,33 +526,15 @@
 					<div>Staying there</div>
 					<div class="main">
 						<div style="font-family: myRaleway; font-size:17px; color: #70716c">There are a wide range of accommodation options available at Kuthaba Bush Lodge. View rates <a href="https://kuthaba.co.za/wp-content/uploads/2020/06/ACCOMMODATION-RATES-2021.pdf" target="_blank">here.</a></div> 
-						<p><button class="Book" onclick="showModal('RES-Modal')">Reservations</button></p>
-									
-						<a id="AccImage" href="https://kuthaba.co.za/accommodation/#accommodation2" target="_blank"><img id="Logo" src="Images/Accomodation.PNG" height="350px" width="100%"></a>
+						<button class="Book" onclick="showModal('RES-Modal')">Reservations</button>
+						<div id="AccImage">
+							<a href="https://kuthaba.co.za/accommodation/#accommodation2" target="_blank"><img id="Logo" src="Images/Accomodation.PNG" height="350px" width="100%"></a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>			
 
-		<section> <!-- Vector Art Protea -->
-			<div class="imageContainer" id="RSVPFERN">
-				<img src="Images/fern.png" alt="Protea" height="50" width="150">
-			</div>
-		</section>
-		
-		<section> <!-- Block for RSVP -->
-			<div class="contentContainer">
-				<div class="RSVP">
-					<div>Répondez s'il vous plaît</div>
-					<div class="main">					
-						<p><button class="RSVPButton" onclick="showModal('RSVP-Modal')">RSVP</button></p>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		
-	
 		<section> <!-- Vector Art Protea -->
 			<div class="imageContainer" id="GiftsFERN">
 				<img src="Images/fern.png" alt="Protea" height="50" width="150">
