@@ -33,7 +33,7 @@ body{
 
 .contentContainer {
 	width: 100%;
-	/*border: 1px solid black; /* border width|style|color */
+	border: 1px solid black;
 	text-align: center;
 	
 }
