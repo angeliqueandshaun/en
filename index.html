@@ -212,7 +212,11 @@
 			}
 			
 			#AccImage {
-				margin-top: -70px;
+				margin-top: 50px;
+			}
+			
+			#Accomodation {
+				margin-top: 0px;							
 			}
 			
 			#GettingThereContent{
@@ -255,15 +259,16 @@
 			}
 			
 			.Book {
-			font-family: myTex;
-			font-size: 20px;
-			border-radius: 25px;
-			background-color: #eee8d8;
-			border: none;
-			color: #714949;
-			width: 250px;
-			cursor: pointer;
-			margin-top: 30px;
+				font-family: myTex;
+				font-size: 20px;
+				border-radius: 25px;
+				background-color: #eee8d8;
+				border: none;
+				color: #714949;
+				width: 250px;
+				cursor: pointer;
+				margin-top: 30px;
+				z-index = 99;
 			}
 			
 			.HeroImage {
@@ -528,7 +533,9 @@
 						<div style="font-family: myRaleway; font-size:17px; color: #70716c">There are a wide range of accommodation options available at Kuthaba Bush Lodge. View rates <a href="https://kuthaba.co.za/wp-content/uploads/2020/06/ACCOMMODATION-RATES-2021.pdf" target="_blank">here.</a></div> 
 						<button class="Book" onclick="showModal('RES-Modal')">Reservations</button>
 						<div id="AccImage">
-							<a href="https://kuthaba.co.za/accommodation/#accommodation2" target="_blank"><img id="Logo" src="Images/Accomodation.PNG" height="350px" width="100%"></a>
+							<a href="https://kuthaba.co.za/accommodation/#accommodation2" target="_blank">
+								<img id="Accomodation" src="Images/Accomodation.PNG" width="100%">
+							</a>
 						</div>
 					</div>
 				</div>
@@ -628,9 +635,9 @@
 							<form action='#' onsubmit='SubmitAcc();return false'>
 								<p id='Selection'></p>
 								<div id='NameBoxes'>
-									<p id='BookingEmail'>Booking Email: </br><input id='BookingEmailValue'></input></p>
-									<p id='BookingGuest1'>Booking Name: </br><input id='BookingGuest1Value'></input></p>
-									<p id='BookingGuest1'>Booking Contact Number: </br><input id='BookingContactValue'></input></p>
+									<p id='BE'>Booking Email: </br><input id='Booking-Email' pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" required></input></p>
+									<p id='BookingGuest1'>Booking Name: </br><input id='BookingGuest1Value' required></input></p>
+									<p id='BookingGuest1'>Booking Contact Number: </br><input id='BookingContactValue' required></input></p>
 									<p id='BookingGuest2'>Guest 2: </br><input id='BookingGuest2Value'></input></p>
 									<p id='BookingGuest3'>Guest 3: </br><input id='BookingGuest3Value'></input></p>
 									<p id='BookingGuest4'>Guest 4: </br><input id='BookingGuest4Value'></input></p>
@@ -638,18 +645,11 @@
 								
 								<p>Please select your check-in date: </br>
 									<select id='DateSelect'>
-										<option value='26/04/2021'>Monday 26 April 2021</option>
-										<option value='27/04/2021'>Tuesday 27 April 2021</option>
+										<option value='26/04/2021'>Monday 26 April 2021 (2 Nights)</option>
+										<option value='27/04/2021'>Tuesday 27 April 2021 (1 Night)</option>
 									</select>
 								</p>
-								
-								<p>Please select how many nights you would like to stay: </br>
-									<select id='NightSelect'>
-										<option value='2'>2 Nights</option>
-										<option value='1'>1 Night</option>						
-									</select>
-								</p>
-								
+																								
 								<p>Please select if you would like to partake in the breakfast, priced @R55pppn </br>
 									<select id='BreakfastSelect'>
 										<option value='light'>Yes</option>
@@ -901,15 +901,16 @@
 			function SubmitAcc(){								
 				var HTTP2 = new XMLHttpRequest();
 				var Url = 'https://script.google.com/macros/s/AKfycbxNweG_q2HfiY7UHUkn6DbNZJXeERGZvAUBlQTO6rHbYUNb15A/exec';
-				var EmailAddress = '&email=' + document.getElementById('BookingEmailValue').value;
+				var EmailAddress = '&email=' + document.getElementById('Booking-Email').value;
 				var Guest1 = document.getElementById('BookingGuest1Value').value;				
 				var GuestContact = '&contact=' + document.getElementById('BookingContactValue').value;				
 				var Guest2 = document.getElementById('BookingGuest2Value').value;
 				var Guest3 = document.getElementById('BookingGuest3Value').value;				
 				var Guest4 = document.getElementById('BookingGuest4Value').value;				
 				var UnitNumber = '&unit=' + document.getElementById('selectbox').options[document.getElementById('selectbox').selectedIndex].value;
-				var Date = '&date=' + document.getElementById('DateSelect').options[document.getElementById('DateSelect').selectedIndex].value;
-				var Nights = '&nights=' + document.getElementById('NightSelect').options[document.getElementById('NightSelect').selectedIndex].value;
+				var Duration = document.getElementById('DateSelect').options[document.getElementById('DateSelect').selectedIndex].value;				
+				var Date = '';	
+				var Nights = '';
 				var Breakfast = '&breakfast=' + document.getElementById('BreakfastSelect').options[document.getElementById('BreakfastSelect').selectedIndex].value;
 				
 				if (Guest1 == ''){
@@ -935,9 +936,17 @@
 				}else{
 					Guest4 = '&guest4=' + document.getElementById('BookingGuest4Value').value;
 				}
-								
+				
+				if(Duration == 1){
+					Date = '&date=26/04/2012';
+					Nights = '&nights=2';
+				}else{
+					Date = '&date=27/04/2012';
+					Nights = '&nights=1';
+				}
+				
 				document.getElementById('SubmitLabel').innerHTML = 'Please wait while we submit your booking';
-				Url += '?' + EmailAddress + Guest1 + Guest2 + Guest3 + Guest4 + UnitNumber + Date + Nights + Breakfast;
+				Url += '?' + EmailAddress + Guest1 + GuestContact + Guest2 + Guest3 + Guest4 + UnitNumber + Date + Nights + Breakfast;
 				//document.getElementById('SubmitLabel').innerHTML = Url;
 				
 				
@@ -951,6 +960,7 @@
 						
 						if(text == 'confirmed'){
 							document.getElementById('notify').innerHTML = 'Thank you for your booking. We look forward to seeing you there </br>Kuthaba Bush Lodge will be in touch with you with your invoice.</br></br>Please note that the booking will only be finalised once payment has been received by Kuthaba Bush Lodge';					
+							
 						}else {
 							document.getElementById('notify').innerHTML = 'Oops... Something went wrong. Please refresh the page and try again.</br>We are sorry for the inconvenience.';					
 						}		
