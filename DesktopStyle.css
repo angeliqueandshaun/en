@@ -1,0 +1,387 @@
+html {
+	scroll-behavior: smooth;	
+}
+@font-face{
+	font-family: myAmelia;
+	src: url("Fonts/Amelia_Giovani/Amelia Giovani.otf");
+}
+
+@font-face{
+	font-family: myTex;
+	src: url("Fonts/ENGRY/engry.otf");
+}
+
+@font-face {
+	font-family: myfutura;
+	src: url("Fonts/Futura/futura light font.ttf");
+}
+
+@font-face {
+	font-family: myConeriaScript;
+	src: url("Fonts/Coneria-Script/Demo-ConeriaScript.ttf");
+}
+
+@font-face {
+	font-family: myRaleway;
+	src: url("Fonts/Raleway/Raleway-Regular.ttf");
+}
+
+body{
+	
+	
+}			
+
+.contentContainer {
+	width: 100%;
+	/*border: 1px solid black; /* border width|style|color */
+	text-align: center;
+	
+}
+
+.stickyContainer {
+	width: 100%;
+	/*border: 1px solid black; /* border width|style|color */
+	text-align: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: white;
+}
+
+.imageContainer {
+	width: 100%;
+	/*border: 1px solid black; /* border width|style|color */
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.navContainer{
+	width: 100%;
+	text-align: center;
+	position: fixed;
+	top: 0px;
+}
+
+.navBar{												
+	height: 80px;
+	padding-top: 20px;				
+	text-align: center;	
+}
+
+.menu {
+	width: 850px;
+	padding: 5px;
+	display: inline-block;
+	font-family: myTex;
+	font-size: 11px;
+	border-radius: 25px;	
+	border: 0.5px solid #b3844b;
+	background-color: white;
+}
+
+.menuItem {
+	display: inline;
+}
+
+.menuItem:Hover{
+	cursor: pointer;
+}
+
+.menuItem a {
+	text-decoration: none;
+	padding: 25px;
+	color: black;
+}
+
+#Logo {
+	margin-top: 100px;
+	height: 400px; 
+	width: 400px;
+}
+
+.Fern{
+	height: 50px; 
+	width: 150px;
+}
+
+.timer {
+	font-family: myTex;
+	font-size: 30px;
+}
+
+.nameContainer {
+	display: inline-block;
+	margin-left: 30%;
+	text-align: center;
+}
+
+#Intro {			
+	font-family: myConeriaScript;
+	font-size: 75px;
+	color: #71726e;
+	text-shadow: 1px 1px 1px black;				
+}
+
+#Top {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-family: myTex;
+	font-size: 20px;
+	border-radius: 15px;
+	background-color: #eee8d8;
+	border: none;
+	color: #714949;
+	width: 100px;
+	cursor: pointer;
+	
+	
+}
+
+#Names {
+	font-family: myTex;
+	font-size: 45px;
+	color: black;
+	height: 100px;
+	margin-top: 0px;
+}
+
+#Message {
+	font-family: myAmelia;
+	font-size: 65px;
+	color: #b3844b;
+	margin-top: -100px;
+}
+
+#BigDay {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/
+}
+
+#GettingThere {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/
+}
+
+#StayingThere {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/
+}
+
+#Gifts {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/
+}
+
+#Map {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/k;
+}
+
+.RSVP {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/
+}
+
+.RES {
+	font-family: myAmelia;
+	font-size: 62px;
+	color: #b3844b;
+	/*text-shadow: 1px 1px 1px black;*/
+}
+
+#AccImage {
+	margin-top: 50px;
+}
+
+#Accomodation {
+	margin-top: 0px;							
+}
+
+#GettingThereContent{
+	margin-left: 25%;
+	text-align: left;
+	width: 50%;
+}
+
+.main {
+	width: 1100px;
+	display: inline-block;
+	font-size: 18px;
+	font-family: myTex;
+	color: black;
+	text-shadow: none;
+}
+
+.columns {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+}
+
+.columnsName {				
+	display: inline-block;
+	width: 350px;
+	vertical-align: top;			
+}
+
+
+.RSVPButton {
+	font-family: myTex;
+	font-size: 20px;
+	border-radius: 25px;
+	background-color: #eee8d8;
+	border: none;
+	color: #714949;
+	width: 250px;
+	cursor: pointer;
+}
+
+.Book {
+	font-family: myTex;
+	font-size: 20px;
+	border-radius: 25px;
+	background-color: #eee8d8;
+	border: none;
+	color: #714949;
+	width: 250px;
+	cursor: pointer;
+	margin-top: 30px;
+	z-index = 99;
+}
+
+.HeroImage {
+	width: 100%;
+	height: 50%
+	z-index: -1;				
+	position: absolute;
+}
+
+.HeroImage img{								
+	width: 100%;
+	height: 50%;
+	z-index: -2;
+	position: relative;
+	opacity: 0.9;
+}						
+
+.Modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content{
+  background-color: #fefefe;
+  margin: 2% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.RSVPContainer{
+	
+font-size: 14px;
+font-family: myRaleway;
+color: #70716c;
+
+}
+
+.RESContainer{
+	
+font-size: 14px;
+font-family: myRaleway;
+color: #70716c;
+
+}
+
+/* The Close Button */
+.close{
+  color: #aaa;
+  float: right;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#page1 {
+	display: block;
+}
+
+#page2 {
+	display: none;
+}
+
+#page3 {
+	display: none;
+}
+
+#Acc-Page1{
+	display: block;
+}
+
+#Acc-Page2{
+	display: none;
+}
+
+#Acc-Page3{
+	display: none;
+}
+
+#Acc-Page4{
+	display: none;
+}
+
+#Acclist {
+	display: none;
+}
+
+#BookingEmail{
+	
+}
+
+#BookingGuest1{
+	
+}
+
+#BookingGuest2{
+	display: none;
+}
+
+#BookingGuest3{
+	display: none;
+}
+
+#BookingGuest4{
+	display: none;
+}
