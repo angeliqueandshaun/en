@@ -191,6 +191,12 @@ body{
 	/*text-shadow: 1px 1px 1px black;*/k;
 }
 
+#MapSource {	
+	height: 450px;
+	width: 100%;
+}
+
+
 .RSVP {
 	font-family: myAmelia;
 	font-size: 62px;
