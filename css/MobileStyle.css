@@ -1,5 +1,5 @@
 html {
-	scroll-behavior: smooth;	
+	scroll-behavior: smooth;
 }
 @font-face{
 	font-family: myAmelia;
@@ -27,7 +27,8 @@ html {
 }
 
 body{
-	text-align: center;	
+	text-align: center;
+	max-width: 600px;
 }			
 
 .contentContainer {
@@ -95,7 +96,6 @@ body{
 }
 
 #Logo {
-	margin-top: 100px; 
 	width: 75%;
 }
 
