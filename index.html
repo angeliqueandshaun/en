@@ -101,6 +101,10 @@
 				display: inline;
 			}
 			
+			.menuItem:Hover{
+				cursor: pointer;
+			}
+			
 			.menuItem a {
 				text-decoration: none;
 				padding: 25px;
@@ -401,7 +405,7 @@
 				<div class="navContainer">
 					<div class="navBar">
 						<ul class="menu">
-							<li class="menuItem"><a href="#HomeFERN">HOME</a></li>
+							<li class="menuItem" onclick='ScrollTop()'>HOME</li>
 							<li class="menuItem"><a href="#BigDayFERN">THE BIG DAY</a></li>
 							<li class="menuItem"><a href="#RSVPFERN">RSVP</a></li>	
 							<li class="menuItem"><a href="#GettingThereFERN">GETTING THERE</a></li>
@@ -673,7 +677,11 @@
 		
 		<script>
 			var res = new Array;
-			var bookingArray = new Array;			
+			var bookingArray = new Array;	
+			
+			function ScrollTop(){				
+				window.scrollTo(0,0);
+			}
 			
 			function showModal(id){
 				document.getElementById(id).style.display = "block";
