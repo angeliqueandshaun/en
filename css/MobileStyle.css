@@ -112,7 +112,7 @@ body{
 	display: inline-block;
 	margin-left: 30%;
 	text-align: center;
-	padding-bottom: 10px;
+	padding-bottom: 50px;
 	
 }
 
@@ -158,35 +158,35 @@ body{
 
 #BigDay {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 40px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #GettingThere {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 40px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #StayingThere {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 40px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #Gifts {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 40px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #Map {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 40px;
 	color: #b3844b;
 }
 
@@ -197,14 +197,14 @@ body{
 
 .RSVP {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 20px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 .RES {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 20px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
