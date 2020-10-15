@@ -149,42 +149,42 @@ body{
 
 #Message {
 	font-family: myAmelia;
-	font-size: 65px;
+	font-size: 30px;
 	color: #b3844b;
 	margin-top: -100px;
 }
 
 #BigDay {
 	font-family: myAmelia;
-	font-size: 62px;
+	font-size: 30px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #GettingThere {
 	font-family: myAmelia;
-	font-size: 62px;
+	font-size: 30px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #StayingThere {
 	font-family: myAmelia;
-	font-size: 62px;
+	font-size: 30px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #Gifts {
 	font-family: myAmelia;
-	font-size: 62px;
+	font-size: 30px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
 #Map {
 	font-family: myAmelia;
-	font-size: 62px;
+	font-size: 30px;
 	color: #b3844b;
 }
 
@@ -195,7 +195,7 @@ body{
 
 .RSVP {
 	font-family: myAmelia;
-	font-size: 62px;
+	font-size: 30px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
@@ -308,7 +308,7 @@ body{
 
 .RSVPContainer{
 	
-font-size: 14px;
+font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
 
@@ -316,7 +316,7 @@ color: #70716c;
 
 .RESContainer{
 	
-font-size: 14px;
+font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
 
