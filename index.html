@@ -10,21 +10,11 @@
 		<link href='css/DesktopStyle.css' rel='stylesheet' media='screen and (min-width: 900px)'>	
 		<link href='css/MobileStyle.css' rel='stylesheet' media='screen and (max-width: 899px)'>
 		
-			
-	</head>
-	<body>
 		<script src='js/Javascript.js'></script>
-		<script>
-			var modal = document.getElementById("RES-Modal");
-			var RSVP-modal = document.getElementById("RSVP-Modal");
-
-			window.onclick = function(event) {
-				if (event.target == modal) {
-					document.getElementById("RES-Modal").style.display = "none";
-				}
-			}
-		</script>
-	
+		
+	</head>
+	<body>		
+			
 		<section> <!-- Block for navigation Links -->				
 				<div class="navContainer">
 					<div class="navBar">
@@ -179,6 +169,21 @@
 			</div>
 		</section>
 		
+		<section> <!-- Block for Language Selection -->
+			<div id="Language-Modal" class="Modal">
+				<div class="modal-content">
+					<div class='LangContainer'>
+						<!-- <span onclick="hideModal('Lang-Modal')" class="close">&times;</span> -->
+						<div class="Lang">
+							<div style="font-size:50px;">Please select your</br>prefered language:</div>
+							<button class='LangSelect' onclick="setCookie()">English</button>
+							<button class='LangSelect'><a href='Wedding-Afrikaans.html'>Afrikaans</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
 		<section> <!-- RSVP Popup box -->
 			<div id="RSVP-Modal" class="Modal">
 				<div class="modal-content">
@@ -283,7 +288,5 @@
 				</div>
 			</div>			
 		</section>
-		
-		
 	</body>  
 </html>

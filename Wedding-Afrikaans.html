@@ -4,13 +4,16 @@
 		<title>Angelique+Shaun gaan trou</title>
 		<link rel="shortcut icon" href="Logo.png" type="image/x-icon">
 		
-		<link href='DesktopStyle.css' rel='stylesheet' media='screen and (min-width: 900px)'>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href='css/DesktopStyle.css' rel='stylesheet' media='screen and (min-width: 900px)'>	
+		<link href='css/MobileStyle.css' rel='stylesheet' media='screen and (max-width: 899px)'>
 		
 		<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
 			
 	</head>
-	<body>
-		<script src='Javascript.js'></script>
+	<body >
+		<script src='js/Javascript.js'></script>
 	
 		<section> <!-- Block for navigation Links -->				
 				<div class="navContainer">
@@ -164,6 +167,21 @@
 		<section> <!-- Vector Art Protea -->
 			<div class="imageContainer">
 				<img class="Fern" src="Images/fern.png" alt="Protea">
+			</div>
+		</section>
+		
+		<section> <!-- Block for Language Selection -->
+			<div id="Language-Modal" class="Modal">
+				<div class="modal-content">
+					<div class='LangContainer'>
+						<!-- <span onclick="hideModal('Lang-Modal')" class="close">&times;</span> -->
+						<div class="Lang">
+							<div style="font-size:50px;">Please select your</br>prefered language:</div>
+							<button class='LangSelect' onclick="setCookie()">English</button>
+							<button class='LangSelect'><a href='Wedding-Afrikaans.html'>Afrikaans</a></button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		
