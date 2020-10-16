@@ -14,6 +14,16 @@
 	</head>
 	<body>
 		<script src='js/Javascript.js'></script>
+		<script>
+			var modal = document.getElementById("RES-Modal");
+			var RSVP-modal = document.getElementById("RSVP-Modal");
+
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					document.getElementById("RES-Modal").style.display = "none";
+				}
+			}
+		</script>
 	
 		<section> <!-- Block for navigation Links -->				
 				<div class="navContainer">
@@ -59,12 +69,12 @@
 					<div>The big day</div>
 					<div class="main" >
 						<div class="columns Left" >
-							<div style="font-family: myTex; font-size:25px";><b>WHEN</b></div>
-							<p style="font-family: myRaleway; font-size:17px; color: #70716c;"> The wedding will be held on Tuesday, April 27, 2021, 16:00. We'll start with the ceremony at The Cliff Venue, then move to The Reception Boma. Dress code will be smart causual</p>
+							<div class='headings' ><b>WHEN</b></div>
+							<p class='text'> The wedding will be held on Tuesday, April 27, 2021, 16:00. We'll start with the ceremony at The Cliff Venue, then move to The Reception Boma. Dress code will be smart causual</p>
 						</div>
 						<div class="columns Right" >
-							<div style="font-family: myTex; font-size:25px;"><b>WHERE</b></div>
-							<p style="font-family: myRaleway; font-size:17px; color: #70716c;">Kuthaba Bush Lodge,</br>Driefontein Rd,</br> 0510,</br> South Africa</p>
+							<div class='headings'><b>WHERE</b></div>
+							<p class='text'>Kuthaba Bush Lodge,</br>Driefontein Rd,</br> 0510,</br> South Africa</p>
 						</div>
 					</div>
 				</div>
@@ -156,7 +166,6 @@
 			<div class="contentContainer">
 				<div id="Gifts">
 					<div>Gifts</div>
-					<p></p>
 					<div class="main">
 						<p style="font-family: myRaleway; font-size:17px; color: #70716c";>If you are thinking of a gift,</br>To help us on our way,</br>A gift of cash towards our honeymoon,</br>Would really make our day.</br>However, if you prefer to purchase a gift,</br>Feel free to surprise us in your own way.</p>
 					</div>

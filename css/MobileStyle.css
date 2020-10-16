@@ -143,9 +143,8 @@ body{
 
 #Names {
 	font-family: myTex;
-	font-size: 25px;
+	font-size: 28px;
 	color: black;
-	/*height: 100px;*/
 	margin-top: 0px;
 }
 
@@ -153,7 +152,7 @@ body{
 	font-family: myAmelia;
 	font-size: 35px;
 	color: #b3844b;
-	margin-top: -100px;
+	margin-top: -50px;
 }
 
 #BigDay {
@@ -217,10 +216,9 @@ body{
 	margin-top: 0px;							
 }
 
-#GettingThereContent{
-	margin-left: 25%;
+#GettingThereContent{	
 	text-align: left;
-	width: 50%;
+	width: 90%;
 }
 
 .main {	
@@ -243,6 +241,17 @@ body{
 	display: inline-block;
 	width: 100%;
 	vertical-align: top;			
+}
+
+.headings{
+	font-family: myTex; 
+	font-size: 17px;
+}
+
+.text{
+	font-family: myRaleway; 
+	font-size:17px; 
+	color: #70716c;
 }
 
 

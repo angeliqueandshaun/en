@@ -253,6 +253,17 @@ body{
 	width: 350px;
 }
 
+.headings{
+	font-family: myTex; 
+	font-size: 25px;
+}
+
+.text{
+	font-family: myRaleway; 
+	font-size:17px; 
+	color: #70716c;
+}
+
 .RSVPButton {
 	font-family: myTex;
 	font-size: 20px;

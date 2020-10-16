@@ -1,5 +1,5 @@
 var res = new Array;
-var bookingArray = new Array;	
+var bookingArray = new Array;
 
 function ScrollTop(){				
 	window.scrollTo(0,0);
