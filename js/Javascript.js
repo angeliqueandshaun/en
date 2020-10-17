@@ -68,7 +68,7 @@ function callServer(){
 				var JS_obj = JSON.parse(HTTP.response);
 				var myLength = JS_obj.length;
 				if(myLength === 0){
-					document.getElementById('response').innerHTML = 'Email address not found </br> Please use email address sent upon confirmation of Save the date.';
+					document.getElementById('response').innerHTML = 'Email address not found </br> Please use email address submitted upon confirmation of Save the date.';
 				}else{								
 					for(i = 0; i < myLength; i++) {							
 						res.push(JS_obj[i]);
@@ -151,7 +151,7 @@ function Submit(){
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page3').style.display = 'block';
 			}else{
-				document.getElementById('result').innerHTML = 'Error with your submission. Please refresh the page and try again';
+				document.getElementById('result').innerHTML = 'We were unable to submit your request.  Please refresh the page and try again';
 			}
 									
 		}
@@ -170,7 +170,7 @@ function GetAcc(){
 	const Url = 'https://script.google.com/macros/s/AKfycbxNweG_q2HfiY7UHUkn6DbNZJXeERGZvAUBlQTO6rHbYUNb15A/exec';
 	var mySelectList = '<select name:"rooms" id="rooms">';				
 					
-	document.getElementById('Accresponse').innerHTML = 'Please wait while we retrieve the availible accommodation';
+	document.getElementById('Accresponse').innerHTML = 'Please wait while we retrieve the available accommodation';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', Url, true);
@@ -178,7 +178,7 @@ function GetAcc(){
 	HTTP.onreadystatechange = function() {
 		document.getElementById('Accresponse').innerHTML += '...';
 		if(HTTP.readyState === 4 && HTTP.status === 200) {
-			document.getElementById('Accresponse').innerHTML = 'Please select the accomodation you would like to book?';
+			document.getElementById('Accresponse').innerHTML = 'Please select the accommodation you would like to book';
 			var JS_obj = JSON.parse(HTTP.response);					
 			var myLength = JS_obj.length;
 			if(myLength > 0){						
@@ -187,25 +187,25 @@ function GetAcc(){
 					var node = document.createElement('option');
 					var text = JS_obj[i];
 					if(text === 'RIC-1' || text === 'RIC-4' || text === 'RIC-6'){
-						node.textContent = 'Red Ivory Chalet (Sleeps 4 - Queen bed and 2 single beds (2 rooms) @ R 490 pppn)';
+						node.textContent = 'Red Ivory Chalet (Sleeps 4 - Queen bed and 2 single beds (2 rooms) @ R490.00 pppn)';
 						node.value = JS_obj[i];
 					} else if (text === 'RIC-2' || text === 'RIC-3' || text === 'RIC-5'){
-						node.textContent = 'Red Ivory Chalet (Sleeps 4 - Queen bed and double sleeper (1 room) @ R 490 pppn)';
+						node.textContent = 'Red Ivory Chalet (Sleeps 4 - Queen bed and double sleeper (1 room) @ R490.00 pppn)';
 						node.value = JS_obj[i];
 					} else if (text === 'BUN-1' || text === 'BUN-2' || text === 'BUN-3' || text === 'BUN-4' || text === 'BUN-5' || text === 'BUN-6'){
-						node.textContent = 'Bungalows (Sleeps 4 - Queen bed and set of bunk beds @ R 390 pppn)';
+						node.textContent = 'Bungalows (Sleeps 4 - Queen bed and set of bunk beds @ R390.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'BUN-7' || text === 'BUN-8' || text === 'BUN-9'){
-						node.textContent = 'Bungalows (Sleeps 2 - Queen bed @ R 390 pppn)';
+						node.textContent = 'Bungalows (Sleeps 2 - Queen bed @ R390.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'SAF-1' || text === 'SAF-2' || text === 'SAF-3' || text === 'SAF-4' || text === 'SAF-5' ){
-						node.textContent = 'Safari tent (Sleeps 2 - R290 pppm)';
+						node.textContent = 'Safari tent (Sleeps 2 - R290.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'LR8-1' || text === 'LR8-2' || text === 'LR8-3' || text === 'LR8-4' || text === 'LR8-5' || text === 'LR8-6' || text === 'LR8-7' || text === 'LR8-8'){
-						node.textContent = 'Loft room Single Bed (Sleeps 8 - 4 sets of bunk beds - R240 pppn)';
+						node.textContent = 'Loft room Single Bed (Sleeps 8 - 4 sets of bunk beds - R240.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'LR-1' ){
-						node.textContent = 'Loft room (Sleeps 4 - 2 single beds and set of bunk beds - R240 pppn)';
+						node.textContent = 'Loft room (Sleeps 4 - 2 single beds and set of bunk beds - R240.00 pppn)';
 						node.value = JS_obj[i];
 					} else {
 						node.textContent = JS_obj[i];
@@ -232,30 +232,30 @@ function NextPage(){
 	var mySelection = document.getElementById('selectbox');
 	var text = selectbox.options[selectbox.selectedIndex].value;				
 	if(text === 'RIC-1' || text === 'RIC-4' || text === 'RIC-6'){
-		document.getElementById('Selection').innerHTML += 'Red Ivory Chalet (Sleeps 4 - Queen bed and 2 single beds (2 rooms) @ R 490 pppn)';
+		document.getElementById('Selection').innerHTML += 'Red Ivory Chalet (Sleeps 4 - Queen bed and 2 single beds (2 rooms) @ R490.00 pppn)';
 		document.getElementById('BookingGuest2').style.display = 'block';
 		document.getElementById('BookingGuest3').style.display = 'block';
 		document.getElementById('BookingGuest4').style.display = 'block';
 	} else if (text === 'RIC-2' || text === 'RIC-3' || text === 'RIC-5'){
-		document.getElementById('Selection').innerHTML += 'Red Ivory Chalet (Sleeps 4 - Queen bed and double sleeper (1 room) @ R 490 pppn)';					
+		document.getElementById('Selection').innerHTML += 'Red Ivory Chalet (Sleeps 4 - Queen bed and double sleeper (1 room) @ R490.00 pppn)';					
 		document.getElementById('BookingGuest2').style.display = 'block';
 		document.getElementById('BookingGuest3').style.display = 'block';
 		document.getElementById('BookingGuest4').style.display = 'block';
 	} else if (text === 'BUN-1' || text === 'BUN-2' || text === 'BUN-3' || text === 'BUN-4' || text === 'BUN-5' || text === 'BUN-6'){
-		document.getElementById('Selection').innerHTML += 'Bungalows (Sleeps 4 - Queen bed and set of bunk beds @ R 390 pppn)';												
+		document.getElementById('Selection').innerHTML += 'Bungalows (Sleeps 4 - Queen bed and set of bunk beds @ R390.00 pppn)';												
 		document.getElementById('BookingGuest2').style.display = 'block';
 		document.getElementById('BookingGuest3').style.display = 'block';
 		document.getElementById('BookingGuest4').style.display = 'block';
 	} else if (text === 'BUN-7' || text === 'BUN-8' || text === 'BUN-9'){
-		document.getElementById('Selection').innerHTML += 'Bungalows (Sleeps 2 - Queen bed @ R 390 pppn)';						
+		document.getElementById('Selection').innerHTML += 'Bungalows (Sleeps 2 - Queen bed @ R390.00 pppn)';						
 		document.getElementById('BookingGuest2').style.display = 'block';
 	} else if (text === 'SAF-1' || text === 'SAF-2' || text === 'SAF-3' || text === 'SAF-4' || text === 'SAF-5' ){
-		document.getElementById('Selection').innerHTML += 'Safari tent (Sleeps 2 - R290 pppm)';
+		document.getElementById('Selection').innerHTML += 'Safari tent (Sleeps 2 - R290.00 pppn)';
 		document.getElementById('BookingGuest2').style.display = 'block';
 	} else if (text === 'LR8-1' || text === 'LR8-2' || text === 'LR8-3' || text === 'LR8-4' || text === 'LR8-5' || text === 'LR8-6' || text === 'LR8-7' || text === 'LR8-8'){				
-		document.getElementById('Selection').innerHTML += 'Loft room Single Bed (Sleeps 8 - 4 sets of bunk beds - R240 pppn)';						
+		document.getElementById('Selection').innerHTML += 'Loft room Single Bed (Sleeps 8 - 4 sets of bunk beds - R240.00 pppn)';						
 	} else if (text === 'LR-1' ){					
-		document.getElementById('Selection').innerHTML += 'Loft room (Sleeps 4 - 2 single beds and set of bunk beds - R240 pppn)';
+		document.getElementById('Selection').innerHTML += 'Loft room (Sleeps 4 - 2 single beds and set of bunk beds - R240.00 pppn)';
 		document.getElementById('BookingGuest2').style.display = 'block';
 		document.getElementById('BookingGuest3').style.display = 'block';
 		document.getElementById('BookingGuest4').style.display = 'block';
@@ -326,7 +326,7 @@ function SubmitAcc(){
 			var text = HTTP2.response;
 			
 			if(text == 'confirmed'){
-				document.getElementById('notify').innerHTML = 'Thank you for your booking. We look forward to seeing you there </br>Kuthaba Bush Lodge will be in touch with you with your invoice.</br></br>Please note that the booking will only be finalised once payment has been received by Kuthaba Bush Lodge';					
+				document.getElementById('notify').innerHTML = 'Thank you for your booking. We look forward to seeing you there. </br>Kuthaba Bush Lodge will be in touch with you regarding your booking.</br></br>Please note that the booking will only be finalised once payment has been received by Kuthaba Bush Lodge';					
 				
 			}else {
 				document.getElementById('notify').innerHTML = 'Oops... Something went wrong. Please refresh the page and try again.</br>We are sorry for the inconvenience.';					
