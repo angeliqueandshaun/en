@@ -100,8 +100,9 @@ body{
 	position: fixed;
 	left: 95%;
 	text-align: right;
-	font-size: 15px;
 	top: 40px;
+	ont-family: myTex;
+	font-size: 11px;
 }
 
 #Logo {
