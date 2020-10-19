@@ -162,6 +162,7 @@ function Submit(){
 function Confirm(){
 	document.getElementById('Acc-Page1').style.display = 'none';
 	document.getElementById('Acc-Page2').style.display = 'block';
+	document.getElementById('Acc-Page3').style.display = 'none';
 	GetAcc();
 }
 
@@ -187,25 +188,25 @@ function GetAcc(){
 					var node = document.createElement('option');
 					var text = JS_obj[i];
 					if(text === 'RIC-1' || text === 'RIC-4' || text === 'RIC-6'){
-						node.textContent = 'Red Ivory Chalet (Sleeps 4 - Queen bed and 2 single beds (2 rooms) @ R490.00 pppn)';
+						node.textContent = 'Red Ivory Chalet (Sleeps 4 - 2 rooms @R490.00 pppn)';
 						node.value = JS_obj[i];
 					} else if (text === 'RIC-2' || text === 'RIC-3' || text === 'RIC-5'){
-						node.textContent = 'Red Ivory Chalet (Sleeps 4 - Queen bed and double sleeper (1 room) @ R490.00 pppn)';
+						node.textContent = 'Red Ivory Chalet (Sleeps 4 - 1 room @R490.00 pppn)';
 						node.value = JS_obj[i];
 					} else if (text === 'BUN-1' || text === 'BUN-2' || text === 'BUN-3' || text === 'BUN-4' || text === 'BUN-5' || text === 'BUN-6'){
-						node.textContent = 'Bungalows (Sleeps 4 - Queen bed and set of bunk beds @ R390.00 pppn)';
+						node.textContent = 'Bungalows (Sleeps 4 @R390.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'BUN-7' || text === 'BUN-8' || text === 'BUN-9'){
-						node.textContent = 'Bungalows (Sleeps 2 - Queen bed @ R390.00 pppn)';
+						node.textContent = 'Bungalows (Sleeps 2 @R390.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'SAF-1' || text === 'SAF-2' || text === 'SAF-3' || text === 'SAF-4' || text === 'SAF-5' ){
-						node.textContent = 'Safari tent (Sleeps 2 - R290.00 pppn)';
+						node.textContent = 'Safari tent (Sleeps 2 @R290.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'LR8-1' || text === 'LR8-2' || text === 'LR8-3' || text === 'LR8-4' || text === 'LR8-5' || text === 'LR8-6' || text === 'LR8-7' || text === 'LR8-8'){
-						node.textContent = 'Loft room Single Bed (Sleeps 8 - 4 sets of bunk beds - R240.00 pppn)';
+						node.textContent = 'Loft room Single Bed (Sleeps 8 - bunk beds @R240.00 pppn)';
 						node.value = JS_obj[i];								
 					} else if (text === 'LR-1' ){
-						node.textContent = 'Loft room (Sleeps 4 - 2 single beds and set of bunk beds - R240.00 pppn)';
+						node.textContent = 'Loft room (Sleeps 4 @R240.00 pppn)';
 						node.value = JS_obj[i];
 					} else {
 						node.textContent = JS_obj[i];
@@ -224,10 +225,22 @@ function GetAcc(){
 	HTTP.send(Url);
 }
 
+function AccBack(){
+	document.getElementById('Acc-Page2').style.display = 'block';
+	document.getElementById('Acc-Page3').style.display = 'none';
+	document.getElementById('BookingGuest2Value').value = '';
+	document.getElementById('BookingGuest3Value').value = '';
+	document.getElementById('BookingGuest4Value').value = '';
+	//document.getElementById('Selection').innerHTML = 'You have selected the: </br>';
+}
+
 function NextPage(){
 	document.getElementById('Acc-Page2').style.display = 'none';
 	document.getElementById('Acc-Page3').style.display = 'block';
 	document.getElementById('Selection').innerHTML = 'You have selected the: </br>';
+	document.getElementById('BookingGuest2').style.display = 'none';
+	document.getElementById('BookingGuest3').style.display = 'none';
+	document.getElementById('BookingGuest4').style.display = 'none';
 	
 	var mySelection = document.getElementById('selectbox');
 	var text = selectbox.options[selectbox.selectedIndex].value;				
