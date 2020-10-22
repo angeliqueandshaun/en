@@ -95,6 +95,7 @@ body{
 }
 
 #LangSelect {
+	display: none;
 	z-index: 99;
 	position: fixed;
 	left: 90%;
