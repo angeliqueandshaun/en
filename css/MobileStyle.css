@@ -207,16 +207,28 @@ body{
 
 .RSVP {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 36px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
 }
 
+.RSVP-heading{
+	font-family: myAmelia;
+	font-size: 20px;
+	color: #b3844b;
+}
+
 .RES {
 	font-family: myAmelia;
-	font-size: 35px;
+	font-size: 36px;
 	color: #b3844b;
 	/*text-shadow: 1px 1px 1px black;*/
+}
+
+.RES-heading{
+	font-family: myAmelia;
+	font-size: 20px;
+	color: #b3844b;
 }
 
 #AccImage {
