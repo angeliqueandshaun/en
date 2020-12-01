@@ -42,7 +42,10 @@ function ScrollTop(){
 	window.scrollTo(0,0);
 }
 
-function showModal(id){
+function showModal(id,id2){
+	if(id2 != null){
+		document.getElementById(id2).style.display = "none";
+	}
 	document.getElementById(id).style.display = "block";
 }
 		

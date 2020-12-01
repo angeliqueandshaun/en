@@ -205,7 +205,9 @@
 							</form>
 						</div>
 						<div id='page3'>
-							<p>Thank you for your RSVP submission</p>			
+							<p>Thank you for your RSVP submission</p></br>
+							<div>To avoid disapointment, please reserve your accommodation below</div>
+							<button class="Book" onclick="showModal('RES-Modal','RSVP-Modal')">Reservations</button>
 						</div>
 					</div>
 				</div>
@@ -246,6 +248,8 @@
 						<div id='Acc-Page3'>
 							<form action='#' onsubmit='SubmitAcc();return false'>
 								<p id='Selection'></p>
+								<p>**Children under the age of 12 years but older than 3 years pay 50% of the applicable adult rate.</p>
+								<p>**Children under the age of 3 years stay free of charge.</p>
 								<div id='NameBoxes'>
 									<p id='BE'>Email for invoicing: </br><input id='Booking-Email' pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" required></input></p>
 									<p id='BookingGuest1'>Contact number for invoicing: </br><input id='BookingGuest1Value' required></input></p>
