@@ -11,9 +11,13 @@
 		<link href='css/MobileStyle.css' rel='stylesheet' media='screen and (max-width: 899px)'>
 		
 		<script src='js/Javascript.js'></script>
-		
+		<style>
+			#LANG-Modal{
+				display: none;
+			}
+		</style>
 	</head>
-	<body>
+	<body onload='checkCookie()'>
 		<section>
 			<div id='LangSelect'>
 				<a href='https://angeliqueandshaun.github.io/en/'>ENG</a>
@@ -296,6 +300,21 @@
 						<div id='Acc-Page4'>
 							<p id='notify'></p>
 						</div>
+					</div>
+				</div>
+			</div>			
+		</section>
+		
+		<section> <!-- Language Popup box -->
+			<div id="LANG-Modal" class="Modal">
+				<div class="modal-content">
+					<div class="LANGContainer">
+						<p>
+						Please note that the website is available in 2 languages:</br></br>
+
+						Kindly select the language you would like to view the website in:</p>	
+						<button onclick='setCookie("eng")'>English</button>
+						<button onclick='setCookie("afr")'>Afrikaans</button>						
 					</div>
 				</div>
 			</div>			

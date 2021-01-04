@@ -1,42 +1,60 @@
 var res = new Array;
-var bookingArray = new Array;
-			
-			
-			function setCookie() {
-			  var d = new Date();
-			  d.setTime(d.getTime() + 10000);
-			  var expires = "expires=" + d.toGMTString();
-			  document.cookie = "username" + "=" + "shaun" + ";" + expires + ";path=/";
-			  //document.getElementById('Language-Modal').style.display = 'none';
-			}
-			
-			function getCookie() {
-			  var name = "username" + "=";
-			  var decodedCookie = decodeURIComponent(document.cookie);
-			  var ca = decodedCookie.split(';');
-			  for(var i = 0; i < ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == ' ') {
-				  c = c.substring(1);
-				}
-				if (c.indexOf(name) == 0) {
-				  return c.substring(name.length, c.length);
-				}
-			  }
-			  return "";
-			}
+var bookingArray = new Array;	
 
-			function checkCookie() {
-			  var user = getCookie();
-			  if (user != "") {
-				alert('cookie');				
-				document.getElementById('Language-Modal').style.display = 'none';
-				
-			  }else{
-				setCookie();
-				alert('no cookie');
-			  }
-			}
+function setCookie(value){
+	var date = new Date();
+	date.setTime(date.getTime() + (60*1000));
+	var expires = 'expires=' + date.toGMTString();
+	
+	if(value == 'eng'){
+		document.cookie = 'Language=English;'+ expires + '; path=/';		
+		document.getElementById('LANG-Modal').style.display = "none";
+	}
+	
+	if(value == 'afr'){
+		document.cookie = 'Language=Afrikaans;'+ expires + '; path=/';
+		window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/af/index.html");
+	}
+}
+
+function readCookie(){
+	var allcookies = document.cookie;
+	var name = 'Language';
+	var value = '';
+	
+	var cookieArray = allcookies.split(";");
+	
+	for(var i = 0; i < cookieArray.length; i++){
+		var c = cookieArray[i];
+		while (c.charAt(0) == ' ') {
+		  c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+		  return c.substring(name.length, c.length);
+		}
+	}
+}
+
+function checkCookie(){
+	var url = window.location.href;
+	var selectedLang = readCookie();	
+	
+	if( selectedLang == "=Afrikaans" ){
+		if(url === "file:///C:/Users/shaun/OneDrive/Documents/GitHub/en/index.html"){
+			window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/af/index.html");
+			
+		}			
+	}else if( selectedLang == "=English"){
+		if(url === "file:///C:/Users/shaun/OneDrive/Documents/GitHub/af/index.html"){
+			window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/en/index.html");
+			
+		}			
+	}
+	else{
+		document.getElementById('LANG-Modal').style.display = "block";
+	}
+
+}
 
 function ScrollTop(){				
 	window.scrollTo(0,0);
