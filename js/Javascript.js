@@ -38,7 +38,7 @@ function readCookie(){
 function checkCookie(){
 	var url = window.location.href;
 	var selectedLang = readCookie();	
-	alert(url);
+	
 	if( selectedLang == "=Afrikaans" ){
 		if(url === "https://angeliqueandshaun.github.io/en/index.html"){
 			window.location.replace("https://angeliqueandshaun.github.io/af/index.html");
