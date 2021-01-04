@@ -38,7 +38,7 @@ function readCookie(){
 function checkCookie(){
 	var url = window.location.href;
 	var selectedLang = readCookie();	
-	
+	alert(url);
 	if( selectedLang == "=Afrikaans" ){
 		if(url === "file:///C:/Users/shaun/OneDrive/Documents/GitHub/en/index.html"){
 			window.location.replace("C:/Users/shaun/OneDrive/Documents/GitHub/af/index.html");
