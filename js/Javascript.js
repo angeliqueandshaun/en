@@ -3,7 +3,7 @@ var bookingArray = new Array;
 
 function setCookie(value){
 	var date = new Date();
-	date.setTime(date.getTime() + (60*1000));
+	date.setMonth(2);
 	var expires = 'expires=' + date.toGMTString();
 	
 	if(value == 'eng'){
