@@ -380,11 +380,16 @@ color: #70716c;
 
 }
 
+#LANG-Modal{
+display: none;
+}
+
 .LANGContainer{
 	
 font-size: 14px;
 font-family: myRaleway;
 color: #70716c;
+text-align: center;
 
 }
 

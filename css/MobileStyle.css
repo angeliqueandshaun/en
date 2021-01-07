@@ -357,12 +357,16 @@ color: #70716c;
 
 }
 
+#LANG-Modal{
+display: none;
+}
+
 .LANGContainer{
 	
 font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
-
+text-align: center;
 }
 
 /* The Close Button */

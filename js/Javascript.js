@@ -40,12 +40,12 @@ function checkCookie(){
 	var selectedLang = readCookie();	
 	
 	if( selectedLang == "=Afrikaans" ){
-		if(url === "https://angeliqueandshaun.github.io/en/index.html" || url === "https://angeliqueandshaun.github.io/en/"){
+		if(url !== "https://angeliqueandshaun.github.io/af/index.html"){
 			window.location.replace("https://angeliqueandshaun.github.io/af/index.html");
 			
 		}			
 	}else if( selectedLang == "=English"){
-		if(url === "https://angeliqueandshaun.github.io/af/index.html" || url === "https://angeliqueandshaun.github.io/af/"){
+		if(url !== "https://angeliqueandshaun.github.io/en/index.html"){
 			window.location.replace("https://angeliqueandshaun.github.io/en/index.html");			
 		}			
 	}
