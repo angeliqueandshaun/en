@@ -181,8 +181,8 @@ function Submit(){
 	HTTP.open('GET', URL2, true);
 	
 	HTTP.onreadystatechange = function() {
-		document.getElementById('response').innerHTML += '...';
-		//document.getElementById('result').innerHTML = URL2;
+		//document.getElementById('response').innerHTML += '...';
+		document.getElementById('result').innerHTML = URL2;
 		if(HTTP.readyState === 4 && HTTP.status === 200) {						
 			//var JS_obj = JSON.parse(HTTP.response);
 			var returnText = HTTP.response;
