@@ -129,10 +129,11 @@ function CheckSubmittion(){
 	}
 	
 	if(attendCheck > 0){
-		Submit();
+		//Submit();
+		document.getElementById('Loading-Modal').style.display = 'block';
 	}else{
 		if(confirm("You have not selected any boxes. Please can you confirm that no one will be attending?")){
-			Submit();
+			//Submit();
 		}
 	}
 }
@@ -146,6 +147,8 @@ function Submit(){
 	var URL2 = '';
 	var Allergies = '';
 	var Song = '';
+	
+	document.getElementById('Loading-Modal').style.display = 'block';
 	
 	if(document.getElementById('alergy').value != ''){
 		Allergies = '&allergy=' + document.getElementById('alergy').value;
@@ -190,11 +193,14 @@ function Submit(){
 				document.getElementById('page1').style.display = 'none';
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page3').style.display = 'block';
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}else if(returnText === 'false'){
 				document.getElementById('page1').style.display = 'none';
 				document.getElementById('page2').style.display = 'none';
 				document.getElementById('page4').style.display = 'block';
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}else{
+				document.getElementById('Loading-Modal').style.display = 'none';
 				document.getElementById('result').innerHTML = 'We were unable to submit your request.  Please refresh the page and try again';
 			}
 									
