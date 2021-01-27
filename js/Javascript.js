@@ -393,7 +393,7 @@ function SubmitAcc(){
 			var text = HTTP2.response;
 			
 			if(text == 'confirmed'){
-				document.getElementById('notify').innerHTML = 'Thank you for your booking. We look forward to seeing you there. </br>Kuthaba Bush Lodge will be in touch with you regarding your booking.</br></br>Please note that the booking will only be finalised once payment has been received by Kuthaba Bush Lodge';					
+				document.getElementById('notify').innerHTML = 'Thank you for your booking. We look forward to seeing you there. </br>Kuthaba Bush Lodge will be in touch closer to the date.';					
 				document.getElementById('Loading-Modal').style.display = 'none';
 			}else if(text == 'excluded'){
 				document.getElementById('notify').innerHTML = 'Oops... Something went wrong.Please refresh the page and try again.</br>We are sorry for the inconvenience.';
