@@ -90,7 +90,7 @@ function callServer(){
 				var myLength = JS_obj.length;
 				document.getElementById('Loading-Modal').style.display = 'none';
 				if(myLength === 0){
-					document.getElementById('response').innerHTML = 'Email address not found </br> Please use email address submitted upon confirmation of Save the date.';
+					document.getElementById('response').innerHTML = 'Oops... Something went wrong.</br> Please use email address submitted upon confirmation of Save the date.';
 				}else{								
 					for(i = 0; i < myLength; i++) {							
 						res.push(JS_obj[i]);
