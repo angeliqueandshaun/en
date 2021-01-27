@@ -78,6 +78,7 @@ function callServer(){
 		var myCheckBoxList = '<ul>';				
 						
 		document.getElementById('response').innerHTML = 'Please wait while we retrieve your information';
+		document.getElementById('Loading-Modal').style.display = 'block';
 		
 		HTTP.responseType = 'text';
 		HTTP.open('GET', Url, true);
@@ -87,6 +88,7 @@ function callServer(){
 			if(HTTP.readyState === 4 && HTTP.status === 200) {																				
 				var JS_obj = JSON.parse(HTTP.response);
 				var myLength = JS_obj.length;
+				document.getElementById('Loading-Modal').style.display = 'none';
 				if(myLength === 0){
 					document.getElementById('response').innerHTML = 'Email address not found </br> Please use email address submitted upon confirmation of Save the date.';
 				}else{								
@@ -129,11 +131,10 @@ function CheckSubmittion(){
 	}
 	
 	if(attendCheck > 0){
-		//Submit();
-		document.getElementById('Loading-Modal').style.display = 'block';
+		Submit();
 	}else{
 		if(confirm("You have not selected any boxes. Please can you confirm that no one will be attending?")){
-			//Submit();
+			Submit();
 		}
 	}
 }
@@ -148,7 +149,7 @@ function Submit(){
 	var Allergies = '';
 	var Song = '';
 	
-	document.getElementById('Loading-Modal').style.display = 'block';
+	
 	
 	if(document.getElementById('alergy').value != ''){
 		Allergies = '&allergy=' + document.getElementById('alergy').value;
@@ -179,13 +180,14 @@ function Submit(){
 	
 	URL2 = 'https://script.google.com/macros/s/AKfycby1Saj-ZdReD9Lj4UGwob5dYk8k345uVLrYtnJLzZbMNUgUmak/exec' + '?' + EmailAddress + text + Allergies + Song;
 	document.getElementById('result').innerHTML = 'Please wait while we submit your details...';
+	document.getElementById('Loading-Modal').style.display = 'block';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', URL2, true);
 	
 	HTTP.onreadystatechange = function() {
-		//document.getElementById('response').innerHTML += '...';
-		document.getElementById('result').innerHTML = URL2;
+		document.getElementById('response').innerHTML += '...';
+		//document.getElementById('result').innerHTML = URL2;
 		if(HTTP.readyState === 4 && HTTP.status === 200) {						
 			//var JS_obj = JSON.parse(HTTP.response);
 			var returnText = HTTP.response;
@@ -222,6 +224,7 @@ function GetAcc(){
 	var mySelectList = '<select name:"rooms" id="rooms">';				
 					
 	document.getElementById('Accresponse').innerHTML = 'Please wait while we retrieve the available accommodation';
+	document.getElementById('Loading-Modal').style.display = 'block';
 	
 	HTTP.responseType = 'text';
 	HTTP.open('GET', Url, true);
@@ -229,6 +232,7 @@ function GetAcc(){
 	HTTP.onreadystatechange = function() {
 		document.getElementById('Accresponse').innerHTML += '...';
 		if(HTTP.readyState === 4 && HTTP.status === 200) {
+			document.getElementById('Loading-Modal').style.display = 'none';
 			document.getElementById('Accresponse').innerHTML = 'Please select the accommodation you would like to book';
 			var JS_obj = JSON.parse(HTTP.response);					
 			var myLength = JS_obj.length;
@@ -379,7 +383,7 @@ function SubmitAcc(){
 	Url += '?' + EmailAddress + Guest1 + GuestContact + Guest2 + Guest3 + Guest4 + UnitNumber + Date + Nights + Breakfast;
 	//document.getElementById('SubmitLabel').innerHTML = Url;
 	
-	
+	document.getElementById('Loading-Modal').style.display = 'block';
 	HTTP2.responseType = 'text';
 	HTTP2.open('GET', Url, true);
 	
@@ -390,9 +394,10 @@ function SubmitAcc(){
 			
 			if(text == 'confirmed'){
 				document.getElementById('notify').innerHTML = 'Thank you for your booking. We look forward to seeing you there. </br>Kuthaba Bush Lodge will be in touch with you regarding your booking.</br></br>Please note that the booking will only be finalised once payment has been received by Kuthaba Bush Lodge';					
-				
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}else {
-				document.getElementById('notify').innerHTML = 'Oops... Something went wrong. Please refresh the page and try again.</br>We are sorry for the inconvenience.';					
+				document.getElementById('notify').innerHTML = 'Oops... Something went wrong. Please refresh the page and try again.</br>We are sorry for the inconvenience.';
+				document.getElementById('Loading-Modal').style.display = 'none';
 			}		
 		
 																			
