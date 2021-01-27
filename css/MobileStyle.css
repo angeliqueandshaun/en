@@ -350,20 +350,16 @@ body{
   text-align: left;
 }
 
-.RSVPContainer{
-	
+.RSVPContainer{	
 font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
-
 }
 
-.RESContainer{
-	
+.RESContainer{	
 font-size: 12px;
 font-family: myRaleway;
 color: #70716c;
-
 }
 
 #LANG-Modal{
@@ -447,4 +443,35 @@ text-align: center;
 
 #BookingGuest4{
 	display: none;
+}
+
+.loader {
+	border: 10px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 10px solid #b3844b;
+	width: 25px;
+	height: 25px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	background-color: rgba(0,0,0,0.5);
+	margin: 8% auto;
+}
+
+#Loading-Modal{
+	display: none;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: rgba(0,0,0,0.5);
+}
+
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
 }
