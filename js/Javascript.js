@@ -371,7 +371,7 @@ function SubmitAcc(){
 		Guest4 = '&guest4=' + document.getElementById('BookingGuest4Value').value;
 	}
 	
-	if(Duration == 1){
+	if(Duration == 2){
 		Date = '&date=26/04/2012';
 		Nights = '&nights=2';
 	}else{
