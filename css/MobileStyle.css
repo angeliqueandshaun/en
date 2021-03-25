@@ -313,6 +313,10 @@ body{
 	position: absolute;
 }
 
+.qr{
+	width: 200px;
+}
+
 .HeroImage img{								
 	width: 100%;
 	height: 50%;

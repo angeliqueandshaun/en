@@ -287,6 +287,10 @@ body{
 	color: #70716c;
 }
 
+.qr{
+	width: 200px;
+}
+
 .RSVPButton {
 	font-family: myTex;
 	font-size: 20px;
