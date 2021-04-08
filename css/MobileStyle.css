@@ -244,6 +244,11 @@ body{
 	width: 90%;
 }
 
+.CovidContent{
+	text-align: left;
+	width: 90%;
+}
+
 .main {	
 	width: 100%;
 	display: inline-block;
