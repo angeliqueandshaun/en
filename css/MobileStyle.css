@@ -249,6 +249,10 @@ body{
 	width: 90%;
 }
 
+#QRCodes{
+	margin-top: -50px;
+}
+
 .main {	
 	width: 100%;
 	display: inline-block;
