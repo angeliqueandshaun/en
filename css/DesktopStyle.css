@@ -247,6 +247,10 @@ body{
 	width: 50%;
 }
 
+#QRCodes{
+	margin-top: -50px;
+}
+
 .CovidContent{
 	margin-left: 25%;
 	text-align: left;
